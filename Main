@@ -1,0 +1,48 @@
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
+public class ConsoleBanco {
+
+    public static void main(String[] args){
+
+
+        Cliente cliente1 = new Cliente("Cibele Maria", 456568545L, LocalDate.parse("1996-11-14"), 15678498949L, "cebola05", "cebola06");
+
+        Cliente cliente2 = new Cliente("Mateus Silva", 456581595L, LocalDate.parse("1998-11-14"), 46848615565L, "mamaral", "mamaral01");
+        
+        Funcionario funcionario1 = new Funcionario("Daniel Silva", "Analista Junior II", 4894, "danisilva", "silva1234");
+
+        Funcionario funcionario2 = new Funcionario("Julia Rodrigues", "Dev Sênior", 45494, "juliarod", "ro1234");
+
+        Conta contapoupançaCliente1 = new Conta(TipoConta.CONTA_POUPANCA, 45648L, 285, BigDecimal.valueOf(10000));
+        Conta contacorrenteCliente1 = new Conta(TipoConta.CONTA_CORRENTE, 45649L, 285, BigDecimal.valueOf(2000));
+
+        contapoupançaCliente1.sacar(BigDecimal.valueOf(100));
+        contapoupançaCliente1.transferir(BigDecimal.valueOf(2500), 45650);
+
+
+
+        Conta contapoupançaCliente2 = new Conta(TipoConta.CONTA_POUPANCA, 45650L, 285, BigDecimal.valueOf(10000));
+        Conta contacorrenteCliente2 = new Conta(TipoConta.CONTA_CORRENTE, 45651L, 285, BigDecimal.valueOf(1000));
+
+        contacorrenteCliente2.deposita(BigDecimal.valueOf(500));
+
+
+        ContaCorrente novoLimite = new ContaCorrente(45648L, 285);
+        novoLimite.pedirLimiteCredito();
+
+
+        cliente1.logar();
+        cliente2.logar();
+        funcionario1.logar();
+        funcionario2.logar();
+
+
+        cliente1.deslogar();
+        cliente2.deslogar();
+        funcionario1.deslogar();
+        funcionario2.deslogar();
+    }
+
+
+}
