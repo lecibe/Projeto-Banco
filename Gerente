@@ -1,0 +1,13 @@
+import java.math.BigDecimal;
+
+public class Gerente extends Funcionario {
+
+    public Gerente (String nomeFuncionario, String cargo, Integer codigoCracha, String nomeUsuario, String senha) {
+        super(nomeFuncionario, cargo, codigoCracha, nomeUsuario, senha);
+    }
+
+    public BigDecimal calcularPLR(){
+        return salario.multiply(BigDecimal.valueOf(4));
+    }
+}
+
