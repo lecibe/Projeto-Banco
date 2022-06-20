@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class Usuario {
+
+    protected String nomeUsuario;
+
+    protected String senha;
+
+    protected Boolean autenticada;
+
+
+    public void setNomeUsuario(String nomeUsuario) {
+        this.nomeUsuario = nomeUsuario;
+    }
+
+    public String getNomeUsuario() {
+        return nomeUsuario;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public Boolean getAutenticada() {
+        return autenticada;
+    }
+
+    public void setAutenticada(Boolean autenticada) {
+        this.autenticada = autenticada;
+    }
+
+    public boolean logar() {
+        Scanner scannerTeclado = new Scanner(System.in);
+
+        System.out.println("Digite seu usuário e senha: ");
+        String loginInformado = scannerTeclado.next();
+        String senhaInformada = scannerTeclado.next();
+
+        if (this.nomeUsuario.equals(loginInformado) && this.senha.equals(senhaInformada)) {
+            System.out.println("Bem vindo!");
+            return this.autenticada = true;
+        }
+        System.out.println("Usuário ou senha incorreto");
+        return this.autenticada = false;
+    }
+
+    public boolean deslogar() {
+        return this.autenticada = false;
+    }
+
+}
