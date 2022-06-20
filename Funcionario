@@ -1,0 +1,54 @@
+import java.math.BigDecimal;
+
+public class Funcionario extends Usuario {
+
+    protected String nomeFuncionario;
+
+    protected Integer codigoCracha;
+
+    protected String cargo;
+
+    protected BigDecimal salario;
+
+
+    public String getNomeFuncionario() {
+        return this.nomeFuncionario;
+    }
+
+    public void setNomeFuncionario(String nomeFuncionario) {
+        this.nomeFuncionario = nomeFuncionario;
+    }
+
+    public Integer getCodigoCracha() {
+        return this.codigoCracha;
+    }
+
+    public void setCodigoCracha(Integer codigoCracha) {
+        this.codigoCracha = codigoCracha;
+    }
+
+    public String getCargo() {
+        return this.cargo = cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+
+    public BigDecimal calcularPLR() {
+        return salario.multiply(BigDecimal.valueOf(3));
+    }
+
+    public BigDecimal calculoFerias() {
+        return salario.multiply(BigDecimal.valueOf(1.3));
+    }
+
+    public Funcionario(String nomeFuncionario, String cargo, Integer codigoCracha, String nomeUsuario, String senha) {
+        this.nomeFuncionario =nomeFuncionario;
+        this.cargo = cargo;
+        this.codigoCracha = codigoCracha;
+        this.nomeUsuario = nomeUsuario;
+        this.senha = senha;
+}
+
+}
