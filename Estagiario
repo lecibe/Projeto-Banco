@@ -1,0 +1,12 @@
+import java.math.BigDecimal;
+
+public class Estagiario extends Funcionario {
+
+    public Estagiario (String nomeFuncionario, String cargo, Integer codigoCracha, String nomeUsuario, String senha) {
+        super(nomeFuncionario, cargo, codigoCracha, nomeUsuario, senha);
+    }
+
+    public BigDecimal calcularPLR(){
+        return salario.multiply(BigDecimal.valueOf(2));
+    }
+}
