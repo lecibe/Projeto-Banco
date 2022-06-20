@@ -1,0 +1,23 @@
+import java.math.BigDecimal;
+
+
+public class ContaCorrente extends Conta {
+    private BigDecimal limitCredito;
+
+    public ContaCorrente(Long numeroConta, Integer agencia) {
+        super(numeroConta, agencia);
+        this.limitCredito = BigDecimal.ZERO;
+    }
+
+    public void setLimiteCredito(BigDecimal limitCredito){
+        this.limitCredito = limitCredito;
+    }
+    public BigDecimal getLimiteCredito(){
+        return this.limitCredito;
+    }
+
+    public void pedirLimiteCredito(){
+        this.limitCredito = this.limitCredito.add(BigDecimal.valueOf(100));
+    }
+
+}
